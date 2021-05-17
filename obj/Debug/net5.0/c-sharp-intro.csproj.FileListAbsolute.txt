@@ -1,0 +1,16 @@
+C:\source\codeworks\c-sharp-intro\bin\Debug\net5.0\c-sharp-intro.exe
+C:\source\codeworks\c-sharp-intro\bin\Debug\net5.0\c-sharp-intro.deps.json
+C:\source\codeworks\c-sharp-intro\bin\Debug\net5.0\c-sharp-intro.runtimeconfig.json
+C:\source\codeworks\c-sharp-intro\bin\Debug\net5.0\c-sharp-intro.runtimeconfig.dev.json
+C:\source\codeworks\c-sharp-intro\bin\Debug\net5.0\c-sharp-intro.dll
+C:\source\codeworks\c-sharp-intro\bin\Debug\net5.0\ref\c-sharp-intro.dll
+C:\source\codeworks\c-sharp-intro\bin\Debug\net5.0\c-sharp-intro.pdb
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.csprojAssemblyReference.cache
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.GeneratedMSBuildEditorConfig.editorconfig
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.AssemblyInfoInputs.cache
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.AssemblyInfo.cs
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.csproj.CoreCompileInputs.cache
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.dll
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\ref\c-sharp-intro.dll
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.pdb
+C:\source\codeworks\c-sharp-intro\obj\Debug\net5.0\c-sharp-intro.genruntimeconfig.cache

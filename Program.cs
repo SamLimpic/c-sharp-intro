@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using c_sharp_intro.Models;
 // NOTE Equivalent to 'IMPORT" lines
 // NOTE All Methods and Properties are written in PascalCase, while local variables are written with camelCase
@@ -41,19 +42,28 @@ namespace c_sharp_intro
             bool running = true;
             while (running)
             {
-
+                Console.Write("Calculating random number.");
+                int freq = 150;
+                for (int i = 0; i < 6; i++)
+                {
+                    Thread.Sleep(600);
+                    Console.Write('.');
+                    Console.Beep(freq, 150);
+                    freq += 150;
+                }
+                Console.Beep(650, 750);
+                Console.Clear();
                 Game game = new Game();
                 bool playing = true;
                 while (playing)
                 {
-                    Console.Clear();
                     Console.Write("What is your guess: ");
                     string guess = Console.ReadLine();
                     if (int.TryParse(guess, out int intGuess))
                     // The console needs to read a String, but we need to pass it a Number, so we must convert it first
                     // If TryParse successfully parses the String, it will return IntGuess, which is the parsed value
                     {
-                        playing = game.Guess(intGuess);
+                        playing = !game.Guess(intGuess);
                     }
                     else
                     {
@@ -62,12 +72,27 @@ namespace c_sharp_intro
                 }
                 Console.WriteLine("GG Bruvs");
                 Console.WriteLine("Shall we play again...? (Y?N)");
-
+                choice = Console.ReadKey().KeyChar;
+                Console.WriteLine("");
+                if (choice == 'y')
+                {
+                    Console.WriteLine("Lets Play!");
+                }
+                else if (choice == 'n')
+                {
+                    Console.WriteLine("Bye Loser!");
+                    running = false;
+                }
+                else
+                {
+                    Console.WriteLine("Your Stupidity is upsetting, I'm done");
+                    running = false;
+                }
             }
 
 
 
-            Console.WriteLine("Hello World!");
+            // Console.WriteLine("Hello World!");
             // NOTE Console.log Equivalent
 
             // SECTION PRIMATIVE DATA TYPES
