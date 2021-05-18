@@ -10,9 +10,15 @@ namespace c_sharp_intro.Models
     public class User
     {
         public string Name { get; set; }
+        public string Pass { get; set; }
         // AccessModifier, DataType, Name { get <-- "anybody can access"; set <-- "anybody can modify"; }
         public int Age { get; private set; }
         // private set <-- Only accessible within this class
+
+        public bool ValidatePassword(string input)
+        {
+            return input == Pass;
+        }
 
         public string HappyBirthday()
         // method signature (access mofidier, return type, name)
@@ -35,12 +41,12 @@ namespace c_sharp_intro.Models
         }
 
 
-        public User(string name, int age)
+        public User(string username, string password)
         // NOTE ctor  <-- keyboard shortcut to generate Constructor Template
         // NOTE Equivalent to the Constructor  <-- inside the class, declare a public method with the same name
         {
-            Name = name;
-            Age = age;
+            Name = username;
+            Pass = password;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using c_sharp_intro.Models;
 // NOTE Equivalent to 'IMPORT" lines
@@ -22,73 +23,117 @@ namespace c_sharp_intro
         // NOTE When C# runs, it looks for this 'MAIN' method first and foremost
         {
             // SECTION Number Game!
-            Console.WriteLine("Do you want to play a game? (Y/N)");
-            char choice = Console.ReadKey().KeyChar;
-            Console.WriteLine("");
-            // Adds a line between the typed character and Console response
-            if (choice == 'y')
-            {
-                Console.WriteLine("Let's Play!");
+            // Console.WriteLine("Do you want to play a game? (Y/N)");
+            // char choice = Console.ReadKey().KeyChar;
+            // Console.WriteLine("");
+            // // Adds a line between the typed character and Console response
+            // if (choice == 'y')
+            // {
+            //     Console.WriteLine("Let's Play!");
 
-            }
-            else if (choice == 'n')
+            // }
+            // else if (choice == 'n')
+            // {
+            //     Console.WriteLine("Too Bad!  Let's Play!");
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Your stupidity is upsetting, let's play anyway!");
+            // }
+            // bool running = true;
+            // while (running)
+            // {
+            //     Console.Write("Calculating random number.");
+            //     int freq = 150;
+            //     for (int i = 0; i < 6; i++)
+            //     {
+            //         Thread.Sleep(600);
+            //         Console.Write('.');
+            //         Console.Beep(freq, 150);
+            //         freq += 150;
+            //     }
+            //     Console.Beep(650, 750);
+            //     Console.Clear();
+            //     Game game = new Game();
+            //     bool playing = true;
+            //     while (playing)
+            //     {
+            //         Console.Write("What is your guess: ");
+            //         string guess = Console.ReadLine();
+            //         if (int.TryParse(guess, out int intGuess))
+            //         // The console needs to read a String, but we need to pass it a Number, so we must convert it first
+            //         // If TryParse successfully parses the String, it will return IntGuess, which is the parsed value
+            //         {
+            //             playing = !game.Guess(intGuess);
+            //         }
+            //         else
+            //         {
+            //             Console.WriteLine("Not that sharpest tool are ya?");
+            //         }
+            //     }
+            //     Console.WriteLine("GG Bruvs");
+            //     Console.WriteLine("Shall we play again...? (Y?N)");
+            //     choice = Console.ReadKey().KeyChar;
+            //     Console.WriteLine("");
+            //     if (choice == 'y')
+            //     {
+            //         Console.WriteLine("Lets Play!");
+            //     }
+            //     else if (choice == 'n')
+            //     {
+            //         Console.WriteLine("Bye Loser!");
+            //         running = false;
+            //     }
+            //     else
+            //     {
+            //         Console.WriteLine("Your Stupidity is upsetting, I'm done");
+            //         running = false;
+            //     }
+            // }
+
+            // SECTION Login
+            Console.WriteLine("Please create a Username for your account");
+            string username = Console.ReadLine();
+            Console.WriteLine("Please create a Password for your account");
+            string password = Console.ReadLine();
+            User user = new User(username, password);
+            Dictionary<string, string> users = new Dictionary<string, string>();
+            users.Add(user.Name, user.Pass);
+            string pass = "";
+            for (int i = 0; i < password.Length; i++)
             {
-                Console.WriteLine("Too Bad!  Let's Play!");
+                pass += "*";
+            }
+            // List<string> userlist = new List<string>()
+            // {
+            //     Users.forEach(u => userList += u.username)
+            // };
+            Console.Clear();
+            Console.WriteLine($"Welcome {username}!  Your password {pass} was successfully created!");
+            Console.WriteLine("Please log in to continue...");
+            Console.Write("Username: ");
+            username = Console.ReadLine();
+            Console.Write("\nPassword: ");
+            password = Console.ReadLine();
+
+            if (users.ContainsKey(username) && users.ContainsKey(password))
+            {
+                Console.WriteLine($"Welcome back {username}!");
             }
             else
             {
-                Console.WriteLine("Your stupidity is upsetting, let's play anyway!");
-            }
-            bool running = true;
-            while (running)
-            {
-                Console.Write("Calculating random number.");
-                int freq = 150;
-                for (int i = 0; i < 6; i++)
+                string error = "Invalid Username or Password!";
+                for (int i = 0; i < error.Length; i++)
                 {
-                    Thread.Sleep(600);
-                    Console.Write('.');
-                    Console.Beep(freq, 150);
-                    freq += 150;
+                    Console.Write(error[i]);
+                    Thread.Sleep(50);
                 }
-                Console.Beep(650, 750);
+                Thread.Sleep(1500);
                 Console.Clear();
-                Game game = new Game();
-                bool playing = true;
-                while (playing)
-                {
-                    Console.Write("What is your guess: ");
-                    string guess = Console.ReadLine();
-                    if (int.TryParse(guess, out int intGuess))
-                    // The console needs to read a String, but we need to pass it a Number, so we must convert it first
-                    // If TryParse successfully parses the String, it will return IntGuess, which is the parsed value
-                    {
-                        playing = !game.Guess(intGuess);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Not that sharpest tool are ya?");
-                    }
-                }
-                Console.WriteLine("GG Bruvs");
-                Console.WriteLine("Shall we play again...? (Y?N)");
-                choice = Console.ReadKey().KeyChar;
-                Console.WriteLine("");
-                if (choice == 'y')
-                {
-                    Console.WriteLine("Lets Play!");
-                }
-                else if (choice == 'n')
-                {
-                    Console.WriteLine("Bye Loser!");
-                    running = false;
-                }
-                else
-                {
-                    Console.WriteLine("Your Stupidity is upsetting, I'm done");
-                    running = false;
-                }
             }
+
+            // Console.WriteLine($"Here is a list of all active Users:");
+            // Console.WriteLine($@"Here is a list of all active Users:");
 
 
 
@@ -152,7 +197,7 @@ namespace c_sharp_intro
             //      GET INPUT
             //          Console.Clear();
             //          Console.WriteLine("Hello, what is your name?");
-            //          string name = Console.ReadLine;  <-- Reads whatever you Write in the console
+            //          string name = Console.ReadLine();  <-- Reads whatever you Write in the console
             //          Console.WriteLine($"Hello {name}")
         }
     }
