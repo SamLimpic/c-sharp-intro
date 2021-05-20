@@ -92,45 +92,45 @@ namespace c_sharp_intro
             // }
 
             // SECTION Login
-            Console.WriteLine("Please create a Username for your account");
-            string username = Console.ReadLine();
-            Console.WriteLine("Please create a Password for your account");
-            string password = Console.ReadLine();
-            User user = new User(username, password);
-            Dictionary<string, string> users = new Dictionary<string, string>();
-            users.Add(user.Name, user.Pass);
-            string pass = "";
-            for (int i = 0; i < password.Length; i++)
-            {
-                pass += "*";
-            }
-            // List<string> userlist = new List<string>()
+            // Console.WriteLine("Please create a Username for your account");
+            // string username = Console.ReadLine();
+            // Console.WriteLine("Please create a Password for your account");
+            // string password = Console.ReadLine();
+            // User user = new User(username, password);
+            // Dictionary<string, string> users = new Dictionary<string, string>();
+            // users.Add(user.Name, user.Pass);
+            // string pass = "";
+            // for (int i = 0; i < password.Length; i++)
             // {
-            //     Users.forEach(u => userList += u.username)
-            // };
-            Console.Clear();
-            Console.WriteLine($"Welcome {username}!  Your password {pass} was successfully created!");
-            Console.WriteLine("Please log in to continue...");
-            Console.Write("Username: ");
-            username = Console.ReadLine();
-            Console.Write("\nPassword: ");
-            password = Console.ReadLine();
+            //     pass += "*";
+            // }
+            // // List<string> userlist = new List<string>()
+            // // {
+            // //     Users.forEach(u => userList += u.username)
+            // // };
+            // Console.Clear();
+            // Console.WriteLine($"Welcome {username}!  Your password {pass} was successfully created!");
+            // Console.WriteLine("Please log in to continue...");
+            // Console.Write("Username: ");
+            // username = Console.ReadLine();
+            // Console.Write("\nPassword: ");
+            // password = Console.ReadLine();
 
-            if (users.ContainsKey(username) && users.ContainsKey(password))
-            {
-                Console.WriteLine($"Welcome back {username}!");
-            }
-            else
-            {
-                string error = "Invalid Username or Password!";
-                for (int i = 0; i < error.Length; i++)
-                {
-                    Console.Write(error[i]);
-                    Thread.Sleep(50);
-                }
-                Thread.Sleep(1500);
-                Console.Clear();
-            }
+            // if (users.ContainsKey(username) && users.ContainsKey(password))
+            // {
+            //     Console.WriteLine($"Welcome back {username}!");
+            // }
+            // else
+            // {
+            //     string error = "Invalid Username or Password!";
+            //     for (int i = 0; i < error.Length; i++)
+            //     {
+            //         Console.Write(error[i]);
+            //         Thread.Sleep(50);
+            //     }
+            //     Thread.Sleep(1500);
+            //     Console.Clear();
+            // }
 
             // Console.WriteLine($"Here is a list of all active Users:");
             // Console.WriteLine($@"Here is a list of all active Users:");
